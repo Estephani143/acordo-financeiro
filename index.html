@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: 'Arial', sans-serif;
+            }
+
+            body {
+                background-color: #f9f9f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+            }
+
+            .container {
+                background: white;
+                padding: 20px;
+                max-width: 400px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                text-align: center;
+                color: #333;
+            }
+
+            .input-field {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+           
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: rgb(2, 2, 235); /* cor base */
+    background: linear-gradient(90deg, rgba(2, 2, 235, 1) 19%, rgba(2, 0, 36, 1) 100%, rgba(252, 191, 77, 0.2189250700280112) 100%); /* gradiente */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease; 
+}
+
+
+.btn:hover {
+    background: linear-gradient(90deg, rgba(2, 2, 235, 1) 19%, rgba(2, 0, 36, 1) 100%, rgba(252, 191, 77, 0.2189250700280112) 100%);
+    background-position: right center;
+}
+
+
+            }
+
+            .resultado {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+
+            .resultado span {
+                color: red;
+            }
+
+            #conteudo {
+                display: none;
+            }
+
+            #historico-section {
+                display: none; 
+            }
+        </style>
+        <title>Acordo Financeiro</title>
+    </head>
+
+    <body>
+ 
+        <div id="login-section" style="text-align: center;">
+            <h2>Digite a senha para acessar a página</h2>
+            <input type="password" id="senha" placeholder="Senha" class="input-field">
+            <button onclick="verificarSenha()" class="btn">Entrar</button>
+            <p id="erro" style="color: red; display: none;">Senha incorreta. Tente novamente.</p>
+        </div>
+
+  
+        <div id="conteudo" class="container">
+            <h2>Acordo Financeiro</h2>
+            <label for="valor-boleto">Qual o valor do boleto do associado? (R$)</label>
+            <input type="number" id="valor-boleto" placeholder="Digite o valor" class="input-field" />
+        
+            <label for="boletos-abertos">Quantos boletos estão em aberto?</label>
+            <select id="boletos-abertos" class="input-field">
+                <option value="">Selecione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">Há mais de 4</option>
+                <option value="evento">Em Evento</option>
+            </select>
+        
+            <div id="historico-section" style="display: none; margin-top: 15px;">
+                <label for="historico">Escolha o histórico do associado:</label>
+                <select id="historico" class="input-field">
+                    <option value="">Selecione</option>
+                    <option value="1">BOA ADIMPLÊNCIA</option>
+                    <option value="2">ATRASOS PONTUAIS</option>
+                    <option value="3">ATRASOS FREQUENTES</option>
+                    <option value="4">REATIVOU RECENTEMENTE</option>
+                </select>
+            </div>
+        
+            <button id="calcular-btn" class="btn">Calcular Desconto</button>
+        
+            <p id="resultado" class="resultado"></p>
+        </div>
+
+        <script language="javascript" src="acordo.js"></script>
+    </body>
+</html>
